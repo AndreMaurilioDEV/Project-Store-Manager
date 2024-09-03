@@ -12,31 +12,6 @@ const listSalesModelPerID = async (id) => {
   return rows;
 };
 
-/* const insertSaleModel = async (salesData) => {
-  salesData.forEach((sales) => {
-    if (!sales.productId) {
-      throw new CustomException(
-        'ValidationError',
-        '"productId" is required',
-      );
-    }
-    if (sales.quantity === undefined || sales.quantity === null) {
-      throw new CustomException(
-        'ValidationError',
-        '"quantity" is required',
-      );
-    }
-    const quantityNumber = parseInt(sales.quantity, 10);
-    if (isNaN(quantityNumber) || quantityNumber <= 0) { throw new CustomException('UnprocessableEntity', '"quantity" must be greater than or equal to 1'); 
-  };
-    if (![1, 2, 3].includes(sales.productId)) {
-      throw new CustomException('NotFoundError', 'Product not found');
-    }
-  });
-  const result = await salesModel.insertSales(salesData);
-  return result;
-}; */
-
 const existProduct = (saleParemeter) => {
   if (!saleParemeter) {
     throw new CustomException('ValidationError', '"productId" is required');
